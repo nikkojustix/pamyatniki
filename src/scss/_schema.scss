@@ -1,0 +1,16 @@
+.schema {
+  &__img {
+    object-fit: cover;
+  }
+
+  &__btn {
+    display: flex;
+    margin: 40px auto 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .schema__btn {
+    font-size: 13px;
+  }
+}

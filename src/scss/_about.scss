@@ -1,0 +1,121 @@
+.about {
+  &__content {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 0.9fr 0.9fr 1.2fr;
+    grid-template-columns: 0.9fr 0.9fr 0.9fr 0.9fr 1.2fr 1.2fr;
+    gap: 30px;
+  }
+
+  &__item {
+    &:nth-child(1) {
+      .about__img {
+        max-height: 215px;
+      }
+    }
+    &:nth-child(2) {
+      .about__img {
+        max-height: 260px;
+      }
+    }
+    &:nth-child(3) {
+      .about__img {
+        max-height: 370px;
+      }
+    }
+    &:nth-child(4) {
+      align-self: baseline;
+      .about__img {
+        max-height: 420px;
+      }
+    }
+    &:nth-child(5) {
+      align-self: baseline;
+      .about__img {
+        max-height: 300px;
+      }
+      margin-left: 80px;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      grid-column: span 2;
+    }
+
+    &:nth-child(4),
+    &:nth-child(5) {
+      grid-column: span 3;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    margin: 10px 0 0;
+    font-weight: 500;
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+@media (max-width: 899px) {
+  .about {
+    &__item {
+      &:nth-child(1) {
+        grid-column: span 3;
+      }
+      &:nth-child(2) {
+        grid-column: span 3;
+      }
+      &:nth-child(3) {
+        grid-column: span 3;
+      }
+
+      &:nth-child(4) {
+        margin-left: -70px;
+        grid-column-start: 5;
+        grid-column-end: 7;
+      }
+      &:nth-child(5) {
+        grid-column: span 5;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 649px) {
+  .about {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    &__item {
+      &:nth-child(n) {
+        margin: 0;
+        grid-column: initial;
+        .about__img {
+          height: 215px;
+        }
+      }
+      &:nth-child(5) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .about {
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    &__item:nth-child(5) {
+      grid-column: auto;
+    }
+  }
+}

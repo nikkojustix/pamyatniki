@@ -1,0 +1,22 @@
+.tabs {
+  &__nav {
+    display: flex;
+  }
+
+  &__btn {
+    padding: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid var(--color-grey-40);
+    &--active {
+      background-image: url('@img/about-img-5.jpg');
+    }
+  }
+
+  &__item {
+    display: none;
+    &--active {
+      display: block;
+    }
+  }
+}
