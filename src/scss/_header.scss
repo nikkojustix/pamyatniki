@@ -1,26 +1,14 @@
 .header {
-  position: fixed;
-  background-color: var(--color-primary);
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
+  background-color: var(--color-black);
 
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
-  }
-
-  &__contacts {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    padding: 10px 0;
   }
   &__phone {
-    font-size: 20px;
-    font-weight: 500;
+    color: var(--color-white);
   }
 }
 
@@ -29,14 +17,14 @@
   align-items: center;
   gap: var(--gap);
   &__img {
-    width: 86px;
-    height: 50px;
+    width: 156px;
+    height: 100px;
   }
 }
 .menu {
   &__list {
     display: flex;
-    gap: 40px;
+    gap: 60px;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -117,7 +105,7 @@
     visibility: hidden;
     transform: translateX(100%);
     transition: 0.3s;
-    z-index: 1;
+    z-index: 10;
 
     &--active {
       visibility: visible;
@@ -126,13 +114,13 @@
   }
 
   &__menu-list {
-    padding: 0 20px 20px;
+    padding: 20px;
     margin: 0;
-    width: 320px;
+    width: 280px;
     min-height: calc(100vh - 80px);
     margin-top: 80px;
     list-style-type: none;
-    background-color: var(--color-primary);
+    background-color: var(--color-black);
     margin-left: auto;
   }
 
@@ -144,7 +132,6 @@
     display: block;
     padding: 5px 0;
     margin-bottom: 10px;
-    font-weight: 600;
     transition: color 0.3s;
     color: var(--color-white);
 
@@ -198,19 +185,14 @@
   }
 
   .menu__list {
-    gap: 30px;
-  }
-
-  .header__phone {
-    padding-top: 0;
-    font-size: 18px;
+    gap: 40px;
   }
 }
 
 @media (max-width: 1099px) {
   .menu {
     &__list {
-      gap: 10px;
+      gap: 20px;
     }
   }
 }
@@ -222,5 +204,37 @@
 
   .burger {
     display: block;
+  }
+  .logo {
+    &__img {
+      height: 60px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .logo {
+    &__img {
+      height: 60px;
+      width: 100%;
+    }
+  }
+  .header {
+    &__btn {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    &__phone {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .header {
+    &__btn {
+      display: none;
+    }
   }
 }

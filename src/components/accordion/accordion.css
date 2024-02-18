@@ -1,0 +1,19 @@
+.accordion__item {
+  border-bottom: 1px solid #c4c4c4;
+}
+.accordion__item--active .accordion__item-content {
+  display: block;
+}
+.accordion__item-content {
+  padding-bottom: 20px;
+  display: none;
+  animation: fade 0.3s ease;
+}
+
+.content__text {
+  margin-top: 25px;
+  padding-left: 35px;
+}
+.content__text:first-child {
+  margin-top: 0;
+}/*# sourceMappingURL=accordion.css.map */

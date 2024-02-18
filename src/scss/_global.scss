@@ -1,23 +1,18 @@
 :root {
   --color-white: #fff;
   --color-grey-10: #f5f5f5;
-  --color-grey-20: #ebebeb;
-  --color-grey-30: #737d7e;
-  --color-grey-40: #495658;
+  --color-grey-20: #cfccc4;
+  --color-grey-30: #99968f;
+  --color-grey-40: #59554a;
 
-  --color-black: #22221f;
-  --color-dark: #121c11;
+  --color-black: #1c1c1c;
 
-  --color-primary: #006302;
-  --color-primary-light: #1e8120;
-  --color-primary-dark: #004500;
+  --color-primary: #fcc02a;
+  --color-primary-light: #ffc83d;
+  --color-primary-dark: #dfa30c;
 
-  --color-accent: #f57c1f;
-  --color-accent-light: #ff9a3d;
-  --color-accent-dark: #d75e01;
-
-  --color-error: var(--color-accent-light);
-  --color-success: #00b100;
+  --color-error: #f04438;
+  --color-success: #69a042;
 
   --shadow: 0px 44px 18px rgba(0, 0, 0, 0.01), 0px 25px 15px rgba(0, 0, 0, 0.05), 0px 11px 11px rgba(0, 0, 0, 0.09),
     0px 3px 6px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
@@ -59,9 +54,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   background-color: var(--color-grey-10);
-  font-family: 'Rubik', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  line-height: 1.4;
   color: var(--color-black);
   overflow-x: hidden;
 }
@@ -201,31 +197,38 @@ img {
 }
 
 .btn {
-  padding: 12px 16px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 8px;
-  color: var(--color-white);
-  background-color: var(--color-accent);
-  line-height: 18px;
+  color: var(--color-black);
+  background-color: var(--color-primary);
+  line-height: 16px;
   font-weight: 500;
   white-space: nowrap;
-  text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
   @media (hover: hover) {
     &:hover {
-      background-color: var(--color-accent-light);
+      background-color: var(--color-primary-light);
+      color: var(--color-black);
     }
   }
   &:active {
-    background-color: var(--color-accent-dark);
+    background-color: var(--color-primary-dark);
+    color: var(--color-black);
   }
   &:focus-visible {
-    outline: 2px solid var(--color-accent-dark);
+    outline: 2px solid var(--color-primary-dark);
+    color: var(--color-black);
   }
 
   &--success {
     background-color: var(--color-success) !important;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
   }
 }
 
@@ -239,17 +242,17 @@ img {
     content: '';
     display: block;
     position: absolute;
-    bottom: -2px;
+    bottom: -5px;
     left: 0;
     right: 0;
     margin: 0 auto;
     width: 0%;
-    height: 2px;
-    background-color: var(--color-accent);
+    height: 1px;
+    background-color: var(--color-primary);
   }
   @media (hover: hover) {
     &:hover {
-      color: var(--color-accent);
+      color: var(--color-primary);
       &::after {
         width: 100%;
         animation: show-underline 0.4s ease-out;
