@@ -1,0 +1,69 @@
+.opt {
+  background-image: url('@img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &__inner {
+    padding: 120px 0;
+  }
+
+  &__badges {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__badge {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+    padding: 10px;
+    max-width: 526px;
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: var(--color-primary);
+      transform: skewX(-20deg);
+      z-index: -1;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .opt {
+    &__inner {
+      padding: 80px 0;
+    }
+
+    &__badges {
+      margin-bottom: 60px;
+    }
+    &__badge {
+      font-size: 18px;
+      max-width: 420px;
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .opt {
+    &__inner {
+      padding: 60px 0;
+    }
+
+    &__badges {
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+  }
+}
