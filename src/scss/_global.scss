@@ -105,7 +105,10 @@ img {
   &__title {
     font-size: 36px;
     font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    text-transform: uppercase;
     margin: 0 0 40px;
+    text-align: center;
     &--in-row {
       margin-bottom: 0;
     }

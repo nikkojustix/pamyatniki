@@ -589,7 +589,10 @@ img {
 .section__title {
   font-size: 36px;
   font-weight: 600;
+  font-family: "Jost", sans-serif;
+  text-transform: uppercase;
   margin: 0 0 40px;
+  text-align: center;
 }
 .section__title--in-row {
   margin-bottom: 0;
@@ -1202,6 +1205,103 @@ img {
 @media (max-width: 479px) {
   .pros__items {
     grid-template-columns: 1fr;
+  }
+}
+.catalog__item {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.catalog__item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.catalog__img {
+  width: 50%;
+  height: 450px;
+  object-fit: cover;
+}
+.catalog__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.catalog__item-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+}
+.catalog__advs {
+  margin: 0;
+  padding: 0;
+}
+.catalog__adv {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  line-height: 20px;
+  list-style-type: none;
+}
+.catalog__adv:last-child {
+  margin-bottom: 0;
+}
+.catalog__adv::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/icons/star.svg");
+  background-size: cover;
+}
+.catalog__price {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+.catalog__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 767px) {
+  .catalog__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 60px;
+    column-gap: 20px;
+  }
+  .catalog__item {
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+  }
+  .catalog__item:nth-child(even) {
+    flex-direction: column;
+  }
+  .catalog__img {
+    width: 100%;
+    height: 300px;
+  }
+  .catalog__content {
+    gap: 10px;
+  }
+  .catalog__item-title {
+    font-size: 20px;
+  }
+  .catalog__adv {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 599px) {
+  .catalog__items {
+    grid-template-columns: 1fr;
+  }
+  .catalog__btns {
+    gap: 10px;
   }
 }
 .footer {
