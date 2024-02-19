@@ -675,8 +675,7 @@ img {
   border: none;
   color: var(--color-black);
   background-color: var(--color-primary);
-  line-height: 16px;
-  font-weight: 500;
+  line-height: 1.4;
   white-space: nowrap;
   cursor: pointer;
   transition: 0.3s;
