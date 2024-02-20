@@ -263,6 +263,46 @@
   </div>
 </section>
 
+        <!--  -->
+        <section class="selection section">
+  <div class="container">
+    <div class="selection__inner">
+      <div class="selection__text">
+        <h2 class="selection__title visually-hidden">Подбор памятников по фото</h2>
+        <p class="selection__question">Памятников много?</p>
+        <p class="selection__question">Не знаете какой выбрать?</p>
+      </div>
+      <form class="selection__form form" action="#">
+        <p class="form__text">Подберите фото в интернете и пришлите нам для просчета</p>
+        <div class="form__row">
+          <div class="form__group">
+            <input class="form__input" type="text" name="name" id="selection-name" placeholder="Имя" required />
+            <label class="form__label" for="selection-name">Имя<span class="form__req">*</span></label>
+            <span class="form__sup-text">*Обязательно</span>
+          </div>
+          <div class="form__group">
+            <input class="form__input" type="tel" name="tel" id="selection-tel" placeholder="Телефон" required />
+            <label class="form__label" for="selection-tel">Телефон<span class="form__req">*</span></label>
+            <span class="form__sup-text">*Обязательно</span>
+          </div>
+        </div>
+        <div class="form__group">
+          <input class="form__input" type="text" name="comment" id="selection-comment" placeholder="Комментарий к заявке" />
+          <label class="form__label" for="selection-comment">Комментарий</label>
+          <span class="form__sup-text">Введите ваш комментарий</span>
+        </div>
+        <div class="form__group">
+          <input class="form__file" type="file" name="file" id="selection-file" />
+          <label class="form__file-wrapper" for="selection-file">
+            <button class="form__file-btn btn">Обзор</button>
+            <div class="form__file-fake">Файл не выбран</div>
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
       </main>
       <footer class="footer" id="footer">
   <div class="container">

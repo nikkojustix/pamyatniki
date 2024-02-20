@@ -211,7 +211,7 @@ img {
 
 .btn {
   padding: 12px 24px;
-  border: none;
+  border: 1px solid transparent;
   color: var(--color-black);
   background-color: var(--color-primary);
   line-height: 1.4;
@@ -278,9 +278,11 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+
   &__group {
     position: relative;
     max-width: 300px;
+    width: 100%;
   }
 
   &__input {
@@ -338,6 +340,26 @@ img {
         color: var(--color-error);
       }
     }
+  }
+  &__file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+  &__file-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+  }
+  &__file-btn {
+    background-color: var(--color-grey-30);
+    color: var(--color-grey-20);
+  }
+  &__file-fake {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--color-grey-30);
   }
 
   &__label {
