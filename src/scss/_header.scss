@@ -28,6 +28,10 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    &--column {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   &__link {
@@ -186,6 +190,9 @@
 
   .menu__list {
     gap: 40px;
+    &--column {
+      gap: 10px;
+    }
   }
 }
 
@@ -193,12 +200,15 @@
   .menu {
     &__list {
       gap: 20px;
+      &--column {
+        gap: 10px;
+      }
     }
   }
 }
 
 @media (max-width: 999px) {
-  .menu {
+  .header__menu {
     display: none;
   }
 

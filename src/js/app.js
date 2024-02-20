@@ -8,24 +8,43 @@ flsFunctions.isWebp();
 const burgerBtn = document.querySelector('.burger__btn');
 burgerBtn.addEventListener('click', flsFunctions.toggleMobileMenu);
 
-if (document.querySelector('.gallery--photo') != null) {
-  new Splide('.gallery--photo', {
+const fileField = document.querySelector('.form__file');
+const fileWrapper = fileField.nextElementSibling;
+const fileVal = fileWrapper.querySelector('.form__file-fake');
+const initialText = fileVal.innerText;
+fileField.addEventListener('change', (e) => {
+  let countFiles = '';
+  if (fileField.files && fileField.files.length >= 1) {
+    countFiles = fileField.files.length;
+  }
+
+  if (countFiles) {
+    fileVal.innerText = fileField.files[0].name;
+    fileVal.style.color = 'var(--color-white)';
+  } else {
+    fileVal.innerText = initialText;
+    fileVal.style.color = 'var(--color-grey-30)';
+  }
+});
+
+if (document.querySelector('.gallery') != null) {
+  new Splide('.gallery', {
     arrows: true,
-    pagination: false,
-    type: 'loop',
-    padding: '27%',
-    gap: '80px',
-    speed: '700',
+    pagination: true,
+    perPage: 3,
+    perMove: 1,
+    gap: '20px',
+    updateOnMove: true,
+    focus: 0,
+    omitEnd: true,
     breakpoints: {
-      1199: {
-        padding: '20%',
+      960: {
+        perPage: 2,
       },
-      767: {
-        padding: '80px',
+      699: {
+        perPage: 1,
       },
-      550: {
-        padding: '20px',
-      },
+      550: {},
     },
   }).mount();
 }

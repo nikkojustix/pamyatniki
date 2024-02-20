@@ -128,83 +128,47 @@ img {
 .splide {
   &__arrows {
     display: flex;
+    justify-content: center;
     gap: var(--gap);
+    margin-top: 20px;
   }
 
-  &__arrow-stroke {
+  &__arrow {
     background-color: transparent;
     border: none;
     background-size: cover;
-    width: 64px;
-    height: 32px;
+    width: 14px;
+    height: 14px;
     padding: 0;
     cursor: pointer;
-
-    svg path {
-      stroke: var(--color-primary);
-      transition: 0.3s;
-    }
+    transition: 0.3s;
 
     &:disabled {
-      svg path {
-        stroke: var(--color-grey-30);
-      }
+      opacity: 0.5;
     }
-
-    @media (hover: hover) {
-      &:not(:disabled):hover {
-        svg path {
-          stroke: var(--color-accent);
-        }
-      }
+  }
+  &__pagination {
+    padding: 0;
+    gap: 20px;
+    li {
+      display: flex;
     }
   }
 
-  &__arrow-round {
-    width: 27%;
-    height: 100%;
-    flex-shrink: 0;
+  &__pagination__page {
+    width: 14px;
+    height: 14px;
     padding: 0;
-    border: none;
-    background-color: transparent;
+    border: 2px solid var(--color-grey-10);
+    border-radius: 50%;
+    background-color: var(--color-black);
+    opacity: 0.7;
+    transition: 0.3s;
     cursor: pointer;
-    display: flex;
-    align-items: center;
 
-    svg rect {
-      transition: fill 0.3s;
-    }
-
-    &:disabled {
-      svg {
-        opacity: 0.6;
-      }
-      svg rect {
-        fill: var(--color-grey-30);
-      }
-      svg path {
-        fill: var(--color-grey-40);
-      }
-    }
-
-    @media (hover: hover) {
-      &:not(:disabled):hover svg rect {
-        fill: var(--color-accent-light);
-      }
-    }
-
-    &:active svg rect {
-      fill: var(--color-accent-dark);
-    }
-
-    &--prev {
-      justify-content: end;
-      padding-right: 20px;
-    }
-
-    &--next {
-      justify-content: start;
-      padding-left: 20px;
+    &.is-active {
+      border-color: var(--color-black);
+      opacity: 1;
     }
   }
 }
@@ -279,26 +243,38 @@ img {
   align-items: center;
   gap: 20px;
 
+  &__text {
+    max-width: 270px;
+    margin: 0;
+    font-size: 18px;
+    color: var(--color-white);
+  }
+
+  &__row {
+    display: flex;
+    gap: 20px;
+    max-width: 400px;
+  }
+
   &__group {
     position: relative;
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
   }
 
   &__input {
-    padding: 16px 16px;
-    border-radius: 4px;
+    padding: 12px 16px;
     border: 1px solid var(--color-grey-30);
     line-height: 20px;
     width: 100%;
     background-color: transparent;
-    color: var(--color-black);
+    color: var(--color-white);
     transition: 0.3s;
     @media (hover: hover) {
       &:hover {
-        border-color: var(--color-black);
+        border-color: var(--color-white);
         & + .form__label {
-          color: var(--color-black);
+          color: var(--color-white);
         }
       }
     }
@@ -315,7 +291,7 @@ img {
         padding: 0 4px;
         top: -8px;
         left: 12px;
-        background-color: var(--color-grey-10);
+        background-color: var(--color-black);
         color: var(--color-primary);
       }
     }
@@ -325,7 +301,7 @@ img {
       padding: 0 4px;
       top: -8px;
       left: 12px;
-      background-color: var(--color-grey-10);
+      background-color: var(--color-black);
     }
 
     &:required {
@@ -341,31 +317,11 @@ img {
       }
     }
   }
-  &__file {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-  }
-  &__file-wrapper {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    cursor: pointer;
-  }
-  &__file-btn {
-    background-color: var(--color-grey-30);
-    color: var(--color-grey-20);
-  }
-  &__file-fake {
-    flex-grow: 1;
-    padding: 12px 16px;
-    border: 1px solid var(--color-grey-30);
-  }
 
   &__label {
     position: absolute;
     left: 17px;
-    top: 17px;
+    top: 13px;
     line-height: 20px;
     color: var(--color-grey-30);
     cursor: text;
@@ -381,6 +337,37 @@ img {
     line-height: 16px;
     color: var(--color-grey-40);
     margin: 0;
+  }
+
+  &__file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+  &__file-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    @media (hover: hover) {
+      &:hover > .form__file-fake {
+        border-color: var(--color-primary);
+      }
+      &:hover > .form__file-btn {
+        background-color: var(--color-primary);
+        color: var(--color-black);
+      }
+    }
+  }
+  &__file-fake {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--color-grey-30);
+    color: var(--color-grey-30);
+  }
+  &__file-btn {
+    background-color: var(--color-grey-30);
+    color: var(--color-grey-20);
   }
 }
 
