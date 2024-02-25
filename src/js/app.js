@@ -49,23 +49,9 @@ if (document.querySelector('.gallery') != null) {
   }).mount();
 }
 
-flsFunctions.bindModal('.open-modal', '.modal--form', '.modal__close');
-
-const openModalHousePlanBtns = document.querySelectorAll('.open-modal-house-plan');
-if (openModalHousePlanBtns != null) {
-  openModalHousePlanBtns.forEach((btn, i) => {
-    flsFunctions.bindModal(`.open-modal-house-plan-${i + 1}`, `.modal--house-plan-${i + 1}`, '.modal__close');
-  });
-}
-
-const openModalVillagePlanBtns = document.querySelectorAll('.open-modal-village-plan');
-if (openModalVillagePlanBtns != null) {
-  openModalVillagePlanBtns.forEach((btn, i) => {
-    flsFunctions.bindModal(`.open-modal-village-plan-${i + 1}`, `.modal--village-plan-${i + 1}`, '.modal__close');
-  });
-}
-
-flsFunctions.bindModal('.open-modal-uk', '.modal--uk', '.modal__close');
+flsFunctions.bindModal('.open-modal--callback', '.modal--callback', '.modal__close');
+flsFunctions.bindModal('.open-modal--request', '.modal--request', '.modal__close');
+flsFunctions.bindModal('.open-modal--order', '.modal--order', '.modal__close');
 
 // get current year
 document.querySelector('.current-year').innerHTML = new Date().getFullYear();
@@ -103,9 +89,9 @@ function initYandexMap() {
   script.async = true;
 
   script.src =
-    'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3618fe9679dd4560161c5eac60f1face29ed3fd29b411430cb665c7fc70d95c8&amp;width=700&amp;height=400&amp;lang=ru_RU&amp;scroll=true';
+    'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad0d03ab6cdbd4983f787bae74088d68e3dddf2f9f24e1186dec01eb1b672ce38&amp;width=700&amp;height=400&amp;lang=ru_RU&amp;scroll=true';
 
-  document.querySelector('.footer__map').appendChild(script);
+  document.querySelector('.map__inner').appendChild(script);
 }
 
 // phone mask
